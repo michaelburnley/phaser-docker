@@ -1,10 +1,12 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
  
     // production mode
     mode: "production",
  
     // input file
-    entry: "./src/game/index.js",
+    entry: "./src/config.js",
  
     // output file
     output: {
@@ -13,6 +15,14 @@ module.exports = {
         filename: "bundle.js",
  
         // complete path
-        path: `${__dirname}/src/dist`
-    }
+        path: `${__dirname}/dist`
+    },
+    plugins: [
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: './src/*.html', to: "index.html"},
+                { from: './src/assets', to: "assets" }
+            ]
+        })
+    ]
 }
