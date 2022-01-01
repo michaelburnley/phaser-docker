@@ -8,8 +8,7 @@ COPY webpack.config.js ./
 COPY ./src ./src
 COPY .env* ./
 
-RUN npm install && npm run build
-RUN rm -rf src
+RUN npm install
 
 # Start the app
 EXPOSE 8080

@@ -3,9 +3,9 @@ import { LoadingScene } from './scenes/loading';
 
 const gameConfig = {
 	title: 'Phaser game tutorial',
-  type: Phaser.WEBGL,
+  type: Phaser.CANVAS,
   parent: 'game',
-  backgroundColor: '#351f1b',
+  backgroundColor: '#FFFFFF',
   scale: {
     mode: Phaser.Scale.ScaleModes.NONE,
     width: window.innerWidth,
@@ -15,6 +15,7 @@ const gameConfig = {
     default: 'arcade',
     arcade: {
       debug: false,
+      gravity: { y: 300 }
     },
   },
   render: {
@@ -31,6 +32,7 @@ const gameConfig = {
   audio: {
     disableWebAudio: false,
   },
+
   scene: [LoadingScene],
 };
 
