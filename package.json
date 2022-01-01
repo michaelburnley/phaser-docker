@@ -1,7 +1,7 @@
 {
   "name": "phaser-docker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Development environment for making games in Phaser.JS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,7 @@
     "dev": "npm-run-all --parallel watch:build watch"
   },
   "keywords": [],
-  "author": "",
+  "author": "Michael Burnley",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",
