@@ -10,6 +10,7 @@ Dockerized app for easier development of Phaser.JS games
 - Clone repo to your machine
 - `npm i`
 - `npm run dev`
+- Open http://localhost:9000/ in your browser
 
 # Get Started
 `phaser-docker` is a full environment for developing projects in Phaser.JS.

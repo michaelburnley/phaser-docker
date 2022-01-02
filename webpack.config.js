@@ -1,4 +1,5 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
 module.exports = {
  
@@ -7,6 +8,9 @@ module.exports = {
  
     // input file
     entry: "./src/config.js",
+    performance: {
+        hints: false
+    },
  
     // output file
     output: {
@@ -34,5 +38,14 @@ module.exports = {
                 { from: './src/*.html', to: "index.html"},
             ]
         })
-    ]
+    ],
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'src'),
+        },
+        compress: false,
+        port: 9000,
+        liveReload: false,
+
+    }
 }
