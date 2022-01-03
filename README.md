@@ -6,16 +6,22 @@ Dockerized app for easier development of Phaser.JS games
 - http-server
 - webpack
 
+## Features 
+- Loading bar
+- Asset preload
+- Dockerized for easier deployment
+
+# Get Started
+`phaser-docker` is a full environment for developing projects in Phaser.JS.
+
 ## How to Start
 - Clone repo to your machine
 - `npm i`
 - `npm run dev`
 - Open http://localhost:9000/ in your browser
 
-# Get Started
-`phaser-docker` is a full environment for developing projects in Phaser.JS.
+## Assets
+When adding assets, add them to the assets folder. Then in `src/scenes/assets.js` include the different imports by file type (image or sound.) This will ensure that those assets are preloaded at the start of the game and able to be used throughout the project.
 
-## Features 
-- Loading bar
-- Asset preload
-- Dockerized for easier deployment
+## Scenes
+When adding new scenes, please import add into `src/scenes/index.js`. All of these scenes are imported in order into the config.

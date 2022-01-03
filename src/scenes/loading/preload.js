@@ -1,10 +1,10 @@
 import { Scene } from 'phaser';
 import assets from '../assets';
 
-export class LoadingScene extends Scene {
+export class PreloadScene extends Scene {
 
   constructor() {
-    super('loading-scene');
+    super('preload');
   }
 
   preloadAssets() {
@@ -24,14 +24,16 @@ export class LoadingScene extends Scene {
   }
 
   preload() {
-    var progressBar = this.add.graphics();
-    var progressBox = this.add.graphics();
+    const width = this.cameras.main.width;
+    const height = this.cameras.main.height;
+
+    const progressBar = this.add.graphics();
+    const progressBox = this.add.graphics();
+
     progressBox.fillStyle(0x222222, 0.8);
     progressBox.fillRect(240, 270, 320, 50);
 
-    var width = this.cameras.main.width;
-    var height = this.cameras.main.height;
-    var loadingText = this.make.text({
+    const loadingText = this.make.text({
         x: width / 2,
         y: height / 2 - 50,
         text: 'Loading...',
@@ -42,7 +44,7 @@ export class LoadingScene extends Scene {
     });
     loadingText.setOrigin(0.5, 0.5);
 
-    var percentText = this.make.text({
+    const percentText = this.make.text({
       x: width / 2,
       y: height / 2 - 5,
       text: '0%',
@@ -53,7 +55,7 @@ export class LoadingScene extends Scene {
       });
       percentText.setOrigin(0.5, 0.5);
 
-    var assetText = this.make.text({
+    const assetText = this.make.text({
         x: width / 2,
         y: height / 2 + 50,
         text: '',
@@ -94,6 +96,7 @@ export class LoadingScene extends Scene {
   }
 
   create() {
-    console.log('Loading scene was created');
+    console.log('Preloading scene was created');
+    this.scene.start('main-menu')
   }
 }

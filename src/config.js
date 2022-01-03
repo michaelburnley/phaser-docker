@@ -1,9 +1,9 @@
 import { Game } from 'phaser';
-import { LoadingScene } from './scenes/loading';
+import scenes from './scenes';
 
 const gameConfig = {
-	title: 'Phaser game tutorial',
-  type: Phaser.CANVAS,
+	title: 'Phaser Game',
+  type: Phaser.AUTO,
   parent: 'game',
   backgroundColor: '#FFFFFF',
   scale: {
@@ -32,8 +32,7 @@ const gameConfig = {
   audio: {
     disableWebAudio: false,
   },
-
-  scene: [LoadingScene],
+  scene: scenes,
 };
 
 window.sizeChanged = () => {
