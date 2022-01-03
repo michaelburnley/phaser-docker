@@ -1,8 +1,8 @@
-import sky from '../assets/sky.png';
+// import test_image from '../assets/sky.png';
 
 export default {
     images: {
-        sky,
+        // test_image,
     },
     sounds: {},
 }

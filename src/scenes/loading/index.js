@@ -5,20 +5,22 @@ export class LoadingScene extends Scene {
 
   constructor() {
     super('loading-scene');
-    this.platforms = null;
   }
 
   preloadAssets() {
-    // Preload all images files
+    let has_assets = false;
+    // Preload all image files
     for (const key of Object.keys(assets.images)) {
       this.load.image(key, assets.images[key]);
+      has_assets = true;
     }
-
     // Preload all sound files
     for (const key of Object.keys(assets.sounds)) {
       this.load.audio(key, assets.sounds[key]);
+      has_assets = true;
     }
 
+    return has_assets;
   }
 
   preload() {
@@ -71,8 +73,8 @@ export class LoadingScene extends Scene {
                 
     this.load.on('fileprogress', function (file) {
         assetText.setText('Loading asset: ' + file.key);
-        console.log('loading asset ' + file.key)
     });
+
     this.load.on('complete', function () {
         console.log('completed loading all assets');
         progressBar.destroy();
@@ -81,11 +83,17 @@ export class LoadingScene extends Scene {
         percentText.destroy();
     });
 
-    this.preloadAssets();
+    const has_assets = this.preloadAssets();
+
+    if (!has_assets) {
+        progressBar.destroy();
+        progressBox.destroy();
+        loadingText.destroy();
+        percentText.destroy();
+    }
   }
 
   create() {
     console.log('Loading scene was created');
-    this.add.image(400, 300, 'sky');
   }
 }

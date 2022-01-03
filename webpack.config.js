@@ -43,9 +43,9 @@ module.exports = {
         static: {
             directory: path.join(__dirname, 'src'),
         },
-        compress: false,
         port: 9000,
+        compress: false,
         liveReload: false,
-
+        hot: true,
     }
 }
