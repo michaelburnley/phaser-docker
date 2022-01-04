@@ -4,9 +4,9 @@ import { IdleState } from '../states/player';
 
 export class Player extends Phaser.Physics.Arcade.Sprite {
     constructor(scene, x, y, atlas, texture) {
-        super(scene, x, y, atlas, texture);
-        this.scene.physics.world.enableBody(this, 0); 
-        scene.add.existing(this);
+        // super(scene, x, y, atlas, texture);
+        // this.scene.physics.world.enableBody(this, 0); 
+        // scene.add.existing(this);
     }
 
     preload() {
@@ -18,8 +18,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     // The state machine managing the hero
     //     this.stateMachine = new StateMachine('idle', {
     //      idle: new IdleState(),
-    //      move: new MoveState(),
-    //      swing: new SwingState(),
+    //     //  move: new MoveState(),
+    //     //  swing: new SwingState(),
     //    }, [this, this.hero]);
     }
 
