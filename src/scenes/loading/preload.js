@@ -1,5 +1,5 @@
 import { Scene } from 'phaser';
-import assets from '../assets';
+import assets from '../../assets';
 
 export class PreloadScene extends Scene {
 

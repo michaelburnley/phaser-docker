@@ -21,7 +21,7 @@ Dockerized app for easier development of Phaser.JS games
 - Open http://localhost:9000/ in your browser
 
 ## Assets
-When adding assets, add them to the assets folder. Then in `src/scenes/assets.js` include the different imports by file type (image or sound.) This will ensure that those assets are preloaded at the start of the game and able to be used throughout the project.
+When adding assets, add them to the assets folder. Then in `src/assets.js` include the different imports by file type (image or sound.) This will ensure that those assets are preloaded at the start of the game and able to be used throughout the project.
 
 ## Scenes
-When adding new scenes, please import add into `src/scenes/index.js`. All of these scenes are imported in order into the config.
+When adding new scenes, please import and add into `src/scenes/index.js`. All of these scenes are imported in order into the config.

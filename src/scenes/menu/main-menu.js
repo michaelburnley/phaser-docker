@@ -17,7 +17,8 @@ export class MainMenu extends Scene {
         this.add.existing(this.startButton);
         this.startButton.on('pointerup', () => {
             console.log(`clicked start`)
-        });
+            this.scene.start('main');
+        }, this);
     }
 
     update(delta) {
