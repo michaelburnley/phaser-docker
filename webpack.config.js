@@ -47,5 +47,17 @@ module.exports = {
         compress: false,
         liveReload: false,
         hot: true,
+    },
+    optimization: {
+        splitChunks: {
+          cacheGroups: {
+            commons: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+              filename: '[name].app.bundle.js',
+            }
+          }
+        }
     }
 }
