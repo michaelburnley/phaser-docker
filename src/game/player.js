@@ -1,4 +1,6 @@
 import { Phaser } from 'phaser';
+import { IdleState } from '../states/player';
+// import * as states from '../states/player';
 
 export class Player extends Phaser.Physics.Arcade.Sprite {
     constructor(scene, x, y, atlas, texture) {
@@ -12,7 +14,13 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     create() {
-
+    // https://www.mkelly.me/blog/phaser-finite-state-machine/
+    // The state machine managing the hero
+    //     this.stateMachine = new StateMachine('idle', {
+    //      idle: new IdleState(),
+    //      move: new MoveState(),
+    //      swing: new SwingState(),
+    //    }, [this, this.hero]);
     }
 
     update(time, delta) {
