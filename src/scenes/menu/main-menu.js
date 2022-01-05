@@ -19,6 +19,8 @@ export class MainMenu extends Scene {
             console.log(`clicked start`)
             this.scene.start('main');
         }, this);
+
+       this.scene.launch(`controls`);
     }
 
     update(delta) {
